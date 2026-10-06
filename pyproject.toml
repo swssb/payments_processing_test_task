@@ -3,6 +3,23 @@ name = "fastapiproject"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
+    "alembic>=1.16.5",
+    "asyncpg>=0.30.0",
     "fastapi>=0.142.2",
+    "faststream[cli,rabbit]>=0.5.44",
+    "httpx>=0.28.1",
+    "pydantic-settings>=2.10.1",
+    "ruff>=0.16.10",
+    "sqlalchemy[asyncio]>=2.1.3",
     "uvicorn>=0.54.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+    "pytest-asyncio>=1.2.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+pythonpath = ["."]
